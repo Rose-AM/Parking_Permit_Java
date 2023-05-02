@@ -1,29 +1,33 @@
-package org.example.vehicles;
-
 import org.example.VehicleType;
 import org.example.exception.DuplicateUserID;
 import org.example.LocalTown.Person;
+//import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.extension.ExtendWith;
+import org.example.vehicles.Car;
+import org.example.vehicles.Vehicle;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
 
 class CarTest {
     Person owner = Mockito.mock(Person.class);
 
 
     @Test
-    void TestCarChargePerMonth() throws DuplicateUserID {
+    void TestCarChargePerMonth(){
         Person owner = new Person("he123", "Rose");
-        Vehicle car = new Car("he123", owner, VehicleType.CAR);
+        Vehicle car = new Car("et123", owner, VehicleType.CAR);
 
         double actual = car.getChargePerMonth();
 
         assertEquals(20, actual);
+
+
+        assertThrows(DuplicateUserID.class, ()-> car.addNewOwner(new Person("he123", "rose")));
     }
 
     @Test

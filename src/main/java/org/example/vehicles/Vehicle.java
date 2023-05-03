@@ -1,11 +1,11 @@
 package org.example.vehicles;
 
-import org.example.exception.DuplicateUserID;
+import org.example.exception.DuplicateUserIDException;
 import org.example.LocalTown.Person;
 import org.example.VehicleType;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public abstract class Vehicle {
     private String numberPlate;
@@ -28,10 +28,10 @@ public abstract class Vehicle {
     }
 
     //add new owner to the vehicle
-    public void addNewOwner(Person newOwner) throws DuplicateUserID {
+    public void addNewOwner(Person newOwner) throws DuplicateUserIDException {
         for (Person owner : owners) {
-            if (Objects.equals(newOwner, owner)) {
-                throw new DuplicateUserID("User ID already exists");
+            if (owner.equals(newOwner) ) {
+                throw new DuplicateUserIDException("User ID already exists");
             }
         }
             owners.add(newOwner);

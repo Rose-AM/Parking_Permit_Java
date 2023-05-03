@@ -23,11 +23,11 @@ public class Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Person person)) return false;
-        return Objects.equals(Id, person.Id) && Objects.equals(name, person.name);
+        return Id.equals(person.Id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id, name);
+        return Objects.hash(Id);
     }
 }

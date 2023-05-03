@@ -1,3 +1,5 @@
+package org.example.vehicles;
+
 import org.example.LocalTown.Person;
 import org.example.VehicleType;
 import org.example.vehicles.Motorbike;
@@ -13,7 +15,7 @@ class MotorbikeTest {
     @Test
     void testGetChargePerMonth() {
 
-        Vehicle motorbike = new Motorbike("he1", this.owner, VehicleType.MOTORBIKE, 900);
+        Vehicle motorbike = new Motorbike("he1", this.owner, 900);
         double actual = motorbike.getChargePerMonth();
 
         assertEquals(10, actual );

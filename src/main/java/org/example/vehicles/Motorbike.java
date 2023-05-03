@@ -7,8 +7,8 @@ public class Motorbike extends Vehicle {
     final double capacity;
     final double chargePerMonth;
 
-    public Motorbike(String numberPlate, Person owner, VehicleType vehicleType, double capacity) {
-        super(numberPlate, owner, vehicleType);
+    public Motorbike(String numberPlate, Person owner, double capacity) {
+        super(numberPlate, owner, VehicleType.MOTORBIKE);
         this.capacity = capacity;
         chargePerMonth = capacity > 850 ? 10 : 7;
     }

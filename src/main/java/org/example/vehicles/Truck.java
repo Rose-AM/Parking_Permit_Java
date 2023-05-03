@@ -10,8 +10,8 @@ public class Truck extends Vehicle {
     final double chargePer20kg = 5.0;
 
 
-    public Truck(String numberPlate, Person owner, VehicleType vehicleType, double capacity) {
-        super(numberPlate, owner, vehicleType);
+    public Truck(String numberPlate, Person owner, double capacity) {
+        super(numberPlate, owner, VehicleType.TRUCK);
         this.capacity = capacity;
     }
 

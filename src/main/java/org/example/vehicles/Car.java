@@ -7,8 +7,8 @@ public class Car extends Vehicle {
     final double charge = 20.0;
 
 
-    public Car(String numberPlate, Person owner, VehicleType vehicleType) {
-        super(numberPlate, owner, vehicleType);
+    public Car(String numberPlate, Person owner) {
+        super(numberPlate, owner, VehicleType.CAR);
     }
 
     @Override
